@@ -46,8 +46,6 @@ public class Aluno implements Serializable {
         this.nomeAluno = nomeAluno;
     }
 
-    
-
     public int getMatricula() {
         return matricula;
     }
