@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
@@ -32,16 +33,19 @@ public class Turma implements Serializable{
     private String cargHor;
     @OneToMany
     private List<Aluno> alunos;
-    @OneToMany
-    private List<DisciplinaOfertada> disciplinaOfertada;
+    @ManyToOne
+    private Curso curso;
+    
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
+
+    
 
     public String getNome() {
         return nome;
@@ -83,12 +87,14 @@ public class Turma implements Serializable{
         this.alunos = alunos;
     }
 
-    public List<DisciplinaOfertada> getDisciplinaOfertada() {
-        return disciplinaOfertada;
+    
+
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setDisciplinaOfertada(List<DisciplinaOfertada> disciplinaOfertada) {
-        this.disciplinaOfertada = disciplinaOfertada;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 
     

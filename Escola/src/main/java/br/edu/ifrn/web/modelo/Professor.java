@@ -6,19 +6,18 @@
 package br.edu.ifrn.web.modelo;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
  * @author beatriz
  */
 @Entity
-public class Professor implements Serializable{
+public class Professor implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -26,11 +25,8 @@ public class Professor implements Serializable{
     private long cpf;
     private String endereco;
     private long celular;
-    @OneToMany
-    private List<DisciplinaOfertada> disciplinaOfertada;
 
-    
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -70,11 +66,4 @@ public class Professor implements Serializable{
         this.celular = celular;
     }
 
-    public List<DisciplinaOfertada> getDisciplinaOfertada() {
-        return disciplinaOfertada;
-    }
-
-    public void setDisciplinaOfertada(List<DisciplinaOfertada> disciplinaOfertada) {
-        this.disciplinaOfertada = disciplinaOfertada;
-    }
 }
